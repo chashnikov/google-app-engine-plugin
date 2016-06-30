@@ -1,0 +1,31 @@
+buildscript {
+    repositories {
+        maven { url 'http://dl.bintray.com/jetbrains/intellij-plugin-service' }
+    }
+}
+
+plugins {
+    id 'org.jetbrains.intellij' version "0.1.9"
+}
+
+allprojects {
+    apply plugin: 'java'
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+
+    apply plugin: 'org.jetbrains.intellij'
+    intellij {
+        type ideaEdition
+        version ideaVersion
+        updateSinceUntilBuild false
+    }
+}
+
+apply plugin: 'idea'
+idea {
+    project {
+        jdkName = javaVersion
+        languageLevel = javaVersion
+        vcs = 'Git'
+    }
+}

@@ -1,0 +1,4 @@
+include 'app-engine-plugin'
+include 'app-engine-plugin:jps-plugin'
+include 'app-engine-plugin:runtime'
+include 'app-engine-plugin:ultimate'
