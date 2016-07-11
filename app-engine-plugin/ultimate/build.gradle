@@ -19,6 +19,7 @@ sourceSets.main.java.srcDirs = ['source']
 sourceSets.test.java.srcDirs = ['testSrc']
 
 intellij {
+    type "IU"
     //actually only 'JavaEE' and 'GwtStudio' plugins are required, the others are transitive dependencies
     plugins 'JavaEE', 'GwtStudio',
             'maven', 'properties', 'java-i18n',
