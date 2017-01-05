@@ -25,3 +25,7 @@ dependencies {
     compile project(':app-engine-plugin:runtime')
     testCompile group: 'com.jetbrains.intellij.idea', name:'jps-build-test', version: ideaVersion
 }
+
+intellij {
+	type 'JPS'
+}

@@ -50,14 +50,8 @@ artifacts {
     tests testJar
 }
 
-//todo: currently we need this to include 'ultimate' module to the plugin zip; it would be better to support such inclusion in 'intellij' plugin
-project.afterEvaluate {
-    def task = project.tasks.findByName("prepareSandbox")
-    task.dependsOn project('ultimate').jar
-    task.doLast {
-        copy {
-            from files(project('ultimate').jar)
-            into "$task.destinationDir/$appEnginePluginName/lib"
-        }
-    }
+prepareSandbox {
+	from(project.tasks.getByPath(':app-engine-plugin:ultimate:jar'), {
+		into "$appEnginePluginName/lib"
+	})
 }
